@@ -24,7 +24,7 @@ namespace WindowsFormsApplication1
         {
             string[] ports = SerialPort.GetPortNames();
             cboPort.Items.AddRange(ports);
-            cboPort.SelectedIndex = 0;
+            //cboPort.SelectedIndex = 0;
             btnClose.Enabled = false;
 
         }
@@ -42,8 +42,8 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            //try
-            //{
+            try
+            {
    
                 if (serialPort1.IsOpen)
                 {
@@ -59,11 +59,11 @@ namespace WindowsFormsApplication1
                         pictureBox1.ImageLocation = "http://i.imgur.com/pZLI5rN.png";
                     }
                  
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
              
 
